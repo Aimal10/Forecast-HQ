@@ -376,6 +376,20 @@ def main():
                                 key="user_input",
                                 on_change=handle_chat_input,
                                 label_visibility="collapsed")
+                            
+                            # Add copyright notice with custom styling
+                            st.markdown("""
+                            <div style="position: fixed; bottom: 0; width: 100%; 
+                                      background-color: var(--background); 
+                                      padding: 10px; text-align: center; 
+                                      border-top: 1px solid rgba(0,0,0,0.1);">
+                                <p style="color: var(--text); margin: 0;">
+                                    Made by Aimal Dastagirzada | All Rights Reserved
+                                </p>
+                            </div>
+                            """,
+
+                        
 
         except Exception as e:
             st.error(f"Error: {str(e)}")
