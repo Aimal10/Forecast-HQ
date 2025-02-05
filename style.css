@@ -1,0 +1,474 @@
+/* Main container styling */
+:root {
+    --primary: #d93356;
+    --secondary: #602431;
+    --background: #fcfcfc;
+    --text: #241d1f;
+    --accent: #9c2b43;
+    --shadow: rgba(0, 0, 0, 0.05);
+}
+
+/* Override Streamlit's default background */
+.stApp {
+    background-color: var(--background) !important;
+}
+
+.streamlit-expanderHeader {
+    background-color: var(--background) !important;
+}
+
+/* Remove top spacing */
+div.block-container {
+    padding-top: 0;
+    margin-top: 0;
+}
+
+/* Responsive container */
+.container-fluid {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Card styling with responsive adjustments */
+.stCard {
+    background: white;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px var(--shadow);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    margin-bottom: 1rem;
+}
+
+/* File uploader styling */
+.stFileUploader {
+    padding: 1rem;
+    border-radius: 8px;
+    background: white;
+    border: 2px dashed rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.stFileUploader:hover {
+    border-color: var(--primary);
+}
+
+/* Header styling */
+.stTitle {
+    font-size: 2.5rem !important;
+    font-weight: 700 !important;
+    color: var(--text);
+    margin-bottom: 2rem !important;
+}
+
+
+/* Marketing insights section */
+.marketing-insights {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px var(--shadow);
+    border: 1px solid #f0f2f6;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.marketing-insights h1,
+.marketing-insights h2,
+.marketing-insights h3 {
+    color: var(--text);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.marketing-insights h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text);
+    font-weight: 600;
+}
+
+.marketing-insights ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.marketing-insights li {
+    margin-bottom: 0.75rem;
+    color: #424242;
+    line-height: 1.6;
+}
+
+.assistant-greeting {
+    color: #424242;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.greeting-list {
+    list-style-type: none;
+    margin-left: 0;
+    margin-bottom: 2rem;
+    padding-left: 0;
+}
+
+.greeting-list li {
+    margin-bottom: 0.75rem;
+    padding: 0.5rem 1rem;
+    background: #f8f9fa;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.greeting-list li:hover {
+    background: #f0f7ff;
+    transform: translateX(5px);
+}
+
+/* Plot container styling */
+.js-plotly-plot {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px var(--shadow);
+    padding: 1rem;
+    margin-bottom: 2rem;
+    width: 100% !important;
+    height: auto !important;
+}
+
+.js-plotly-plot .plot-container {
+    width: 100% !important;
+    height: auto !important;
+}
+
+/* Chat container styling */
+.chat-container {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    box-shadow: 0 2px 8px var(--shadow);
+    max-width: 100%;
+}
+
+.chat-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.chat-header i {
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+.chat-header h2 {
+    margin: 0;
+    color: var(--text);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* Message styling */
+.chat-message {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+    gap: 12px;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Consistent AI icon styling */
+.chat-message .avatar {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    font-size: 1.2rem;
+}
+
+.chat-message.assistant .avatar {
+    background: var(--primary);
+}
+
+.chat-message.user .avatar {
+    background: var(--accent);
+}
+
+.chat-message .message {
+    flex: 1;
+    padding: 1rem;
+    border-radius: 8px;
+    background: white;
+    color: var(--text);
+    box-shadow: 0 2px 4px var(--shadow);
+    border-left: 4px solid var(--primary);
+    line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .chat-container {
+        padding: 1rem;
+    }
+
+    .chat-message {
+        gap: 8px;
+    }
+
+    .chat-message .avatar {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+    }
+
+    .chat-message .message {
+        padding: 0.75rem;
+    }
+}
+
+/* Input styling */
+.stTextInput > div > div {
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+
+/* Button styling */
+.stButton > button {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 8px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.stButton > button:hover {
+    background: var(--accent);
+    transform: translateY(-2px);
+}
+
+/* Intro section styling */
+.intro-section {
+    margin: 1rem 0 2rem 0;
+}
+
+.intro-section p {
+    color: var(--text);
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Metric styling */
+.stMetric {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px var(--shadow);
+    margin-bottom: 1rem;
+}
+
+/* Markdown content styling */
+strong {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+blockquote {
+    border-left: 3px solid var(--primary);
+    margin: 1rem 0;
+    padding-left: 1rem;
+    color: #666;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    margin: 1rem 0;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 0.5rem;
+    border: 1px solid #dee2e6;
+    text-align: left;
+}
+
+th {
+    background: #f8f9fa;
+    font-weight: 600;
+}
+
+/* Remove default Streamlit image margins */
+.stImage {
+    margin: 0 !important;
+    padding: 0 !important;
+    z-index: 2 !important;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+    font-family: 'Roboto', 'Open Sans', sans-serif;
+}
+
+/* Slider styling */
+.stSlider {
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+/* Error message styling */
+.stAlert {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Markdown formatting */
+.chat-message .message blockquote {
+    border-left: 3px solid var(--primary);
+    margin: 1rem 0;
+    padding-left: 1rem;
+    color: #666;
+}
+
+.chat-message .message table {
+    width: 100%;
+    margin: 1rem 0;
+    border-collapse: collapse;
+}
+
+.chat-message .message th,
+.chat-message .message td {
+    padding: 0.5rem;
+    border: 1px solid #dee2e6;
+    text-align: left;
+}
+
+.chat-message .message th {
+    background: #f8f9fa;
+    font-weight: 600;
+}
+
+/* Loading spinner */
+.stSpinner > div {
+    border-color: var(--primary) !important;
+}
+
+/* Feature cards */
+.feature-card {
+    background: white;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.feature-card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 2px 8px var(--shadow);
+}
+
+.feature-card i {
+    font-size: 1.2rem;
+    color: var(--primary);
+    width: 24px;
+    text-align: center;
+}
+
+.feature-card span {
+    color: var(--text);
+    font-weight: 500;
+}
+
+.stSelectbox {
+    margin-bottom: 1.5rem;
+}
+
+.stSelectbox > div > div {
+    border-radius: 8px !important;
+}
+
+/* Add styles for AI message highlights */
+.chat-message .message .highlight-primary {
+    color: var(--primary);
+    font-weight: 500;
+}
+
+.chat-message .message .highlight-secondary {
+    color: var(--secondary);
+    font-weight: 500;
+}
+
+.chat-message .message .highlight-accent {
+    color: var(--accent);
+    font-weight: 500;
+}
+
+/* Enhance message content styling */
+.chat-message .message p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.chat-message .message ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.chat-message .message li {
+    margin-bottom: 0.75rem;
+    color: var(--text);
+}
+
+.chat-message .message .insight {
+    background: rgba(217, 51, 86, 0.05);
+    border-left: 3px solid var(--primary);
+    padding: 0.75rem 1rem;
+    margin: 1rem 0;
+    border-radius: 0 4px 4px 0;
+}
+
+.chat-message .message .metric {
+    display: inline-block;
+    color: var(--primary);
+    font-weight: 500;
+    padding: 0.25rem 0.5rem;
+    background: rgba(217, 51, 86, 0.05);
+    border-radius: 4px;
+    margin: 0 0.25rem;
+}
